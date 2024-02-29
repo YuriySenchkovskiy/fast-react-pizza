@@ -1,4 +1,8 @@
+import {formatCurrency} from "../../utils/helpers.js";
+import PropTypes from "prop-types";
+
 function MenuItem({ pizza }) {
+    // eslint-disable-next-line no-unused-vars
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
   return (
@@ -14,5 +18,16 @@ function MenuItem({ pizza }) {
     </li>
   );
 }
+
+MenuItem.propTypes = {
+    pizza: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        unitPrice: PropTypes.number.isRequired,
+        ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+        soldOut: PropTypes.bool.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+    }).isRequired,
+};
 
 export default MenuItem;
