@@ -43,9 +43,9 @@ function Button ({children, disabled, to, type, onClick}) {
 Button.propTypes = {
     children: PropTypes.node.isRequired,
     disabled: PropTypes.bool,
-    to: PropTypes.string.isRequired,
+    to: PropTypes.string,
     type: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
 };
 
 export default Button;
